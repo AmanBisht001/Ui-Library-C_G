@@ -80,7 +80,7 @@ const Navbar = ({ darkMode, toggleDarkMode, onOpenSidebar }) => {
               {darkMode ? <FiSun /> : <FiMoon />}
             </button>
             <a
-              href="https://github.com/AmanBisht001"
+              href="https://github.com/AmanBisht001/Ui-Library-C_G"
               target="_blank"
               rel="noopener noreferrer"
               className="github-link"
