@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-  FiSearch,
   FiSun,
   FiMoon,
   FiChevronDown,
@@ -15,7 +14,7 @@ const Navbar = ({ darkMode, toggleDarkMode, onOpenSidebar }) => {
   const location = useLocation();
 
   useEffect(() => {
-    setActiveDropdown(null); // Close dropdowns on route change
+    setActiveDropdown(null);
   }, [location]);
 
   const toggleDropdown = (dropdown) => {
@@ -37,16 +36,13 @@ const Navbar = ({ darkMode, toggleDarkMode, onOpenSidebar }) => {
           </Link>
 
           <div className="nav-links-container">
-            <button
-              onClick={onOpenSidebar}
-              className="nav-link mobile-menu-btn"
-            >
+            <button onClick={onOpenSidebar} className="mobile-menu-btn">
               <FiMenu />
             </button>
 
             <div className="nav-link-wrapper">
               <button
-                className="nav-link dropdown-toggle"
+                className="dropdown-toggle"
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleDropdown("components");
@@ -71,10 +67,6 @@ const Navbar = ({ darkMode, toggleDarkMode, onOpenSidebar }) => {
         </div>
 
         <div className="navbar-right">
-          <div className="version-wrapper">
-            <span className="version-text"></span>
-          </div>
-
           <div className="icon-wrapper">
             <button className="theme-toggle" onClick={toggleDarkMode}>
               {darkMode ? <FiSun /> : <FiMoon />}
